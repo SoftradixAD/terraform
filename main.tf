@@ -47,7 +47,7 @@ resource "aws_instance" "dev" {
   instance_type = "t2.micro"
   subnet_id     = aws_subnet.test_subnet.id  
   associate_public_ip_address = true
-
+  key_name	= "softradixad"
   root_block_device {
     volume_type           = "gp2"   # Change to your desired volume type
     volume_size           = 10      # Change to your desired volume size in GB
@@ -90,7 +90,7 @@ resource "aws_instance" "stage" {
   ami           = "ami-0f58b397bc5c1f2e8"  # Change to your desired AMI
   instance_type = "t2.micro"
   associate_public_ip_address = true
-
+  key_name      = "softradixad"
   subnet_id     = aws_subnet.test_subnet.id
   root_block_device {
     volume_type           = "gp2"   # Change to your desired volume type
